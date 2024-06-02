@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <center><h1>Registration Form</h1>
+    <form="post">
+        Name:<input type="text" name="name"><br><br>
+        Email:<input type="email" name="email" value=""><br><br>
+        Password:<input type="password" name="password" value=""><br><br>
+        <input type="Submit" name="Submit" value="Submit">
+    </center>
+   </form>
+
+    
+</body>
+</html>

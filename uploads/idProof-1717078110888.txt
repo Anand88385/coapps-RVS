@@ -1,0 +1,40 @@
+1. CREATE TABLE orders (
+    order_id SERIAL PRIMARY KEY,
+    order_date DATE,
+    customer_id INTEGER,
+    total_amount DECIMAL
+);
+
+INSERT INTO orders (order_date, customer_id, total_amount) VALUES 
+('2022-03-01', 1, 200.50),
+('2024-08-22', 2, 10.75),
+('2020-02-13', 1, 158.20),
+('2018-07-04', 3, 797.30),
+('2004-04-25', 2, 180.00),
+('2005-12-16', 1, 49.80),
+('2015-08-07', 3, 70.90);
+SELECT customer_id, SUM(total_amount) AS total_order_amount
+FROM orders
+GROUP BY customer_id;
+
+2. CREATE TABLE students (
+    student_id SERIAL PRIMARY KEY,
+    student_name VARCHAR(100),
+    course_id INTEGER
+);
+CREATE TABLE courses (
+    course_id SERIAL PRIMARY KEY,
+    course_name VARCHAR(100)
+);
+INSERT INTO courses (course_name) VALUES 
+('Mathematics'),
+('Physics'),
+('Biology');
+INSERT INTO students (student_name, course_id) VALUES 
+('Rocky', 1),
+('Suresh', 2),
+('Anbu', 1),
+('Bala', 3);
+SELECT s.student_name, c.course_name
+FROM students s
+JOIN courses c ON s.course_id = c.course_id;
